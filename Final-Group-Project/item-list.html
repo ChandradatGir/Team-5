@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Item List</title>
+    <style media="screen">
+
+      body{
+			font-family: Arial, Helvetica, sans-serif;
+			 background-color: #b3ffec;
+			   color:#787878;
+			   width: 100%;
+		  }
+		  .container{
+			 max-width:90%;
+			 width:auto;
+			 height:auto;
+			 margin: 0 auto;
+			 padding: 20px;
+		  }
+      .category div{
+      float:left;
+      clear:none;
+      width:18%;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>List of Items</h1>
+    <h2></h2>
+  <div class="container">
+
+    <div class="category">
+
+      <div class="category1">
+        <h3>Electronics</h3>
+        <form class="item" action="selected-item-page.html" method="GET">
+          <fieldset>
+            <legend>Electronics</legend>
+            <select class="category1" name="electronics" id="electronics" onchange= this.form.submit()>
+
+
+            </select>
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div class="category1">
+        <h3>Clothings</h3>
+        <form class="item" action="selected-item-page.html" method="GET">
+          <fieldset>
+            <legend>Electronics</legend>
+        <select class="category1" name="clothings" id="clothings"  onchange= this.form.submit()>
+          <option value="">Clothings</option>
+
+        </select>
+      </fieldset>
+    </form>
+      </div>
+
+      <div class="category1">
+        <h3>Home Appliances</h3>
+        <form class="item" action="selected-item-page.html" method="GET">
+          <fieldset>
+            <legend>Electronics</legend>
+        <select class="category1" name="homeappliances" id="homeappliances" onchange= this.form.submit()>
+          <option value="ha">Home Appliances</option>
+          <option value="ha1">Whirpool Refrigerator</option>
+          <option value="ha2">Samsung Gas Range</option>
+          <option value="ha3">Instant Pot</option>
+          <option value="ha4">LG Countertop Microwave</option>
+          <option value="ha5">Ninja Pro Kitchen System</option>
+        </select>
+      </fieldset>
+    </form>
+      </div>
+
+      <div class="category1">
+        <h3>Baby Gears</h3>
+        <form class="item" action="selected-item-page.html" method="GET">
+          <fieldset>
+            <legend>Electronics</legend>
+        <select class="category1" name="babygears" id="babygears" onchange= this.form.submit()>
+          <!--<option value="">Baby Gears</option>
+          <option value="ha1">Whirpool Refrigerator</option>
+          <option value="ha2">Samsung Gas Range</option>-->
+        </select>
+      </fieldset>
+    </form>
+      </div>
+
+      <div class="category1">
+        <h3>Toys</h3>
+        <form class="item" action="selected-item-page.html" method="GET">
+          <fieldset>
+            <legend>Electronics</legend>
+        <select class="category1" name="toys" id="homeappliances" onchange= this.form.submit()>
+          <option value="">Toys</option>
+        <!--  <option value="ha1">Whirpool Refrigerator</option>
+          <option value="ha2">Samsung Gas Range</option>-->
+        </select>
+      </fieldset>
+    </form>
+      </div>
+
+    </div
+  </div>
+  </body>
+</html>
