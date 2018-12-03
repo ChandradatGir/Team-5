@@ -4,15 +4,30 @@
     <meta charset="utf-8">
     <title>Selected Item Page</title>
     <style media="screen">
+
+    body{
+      background-color: linen ;
+      max-width: 1800px;
+      width: auto;
+    }
+
       .clearfix div{
         float:left;
         clear:none;
 
-      }
-      
-      .info-holder{
 
-        width:25%;
+      }
+
+      .info-holder {
+
+        width:30%;
+      }
+
+      .img-holder div{
+        max-width: 400px;
+        margin: 15px;
+        width: auto;
+
       }
 
     </style>
@@ -26,10 +41,12 @@
       <!-------->
         <div class="main clearfix">
       		<div class="img-holder">
-      			<div>
+      			<div >
       				<img id="info-pic" src="images/samsung-gas-ranges.jpg" alt="Electronics" width="260" height=auto>
       				<!--<p id="info-name">Electronics</p>-->
+
       			</div>
+
       		</div>
       		<div id="myDiv1" class="info-holder" >
       			<p><strong>Name: </strong><span id="info-name">Electronics</span></p>
@@ -37,19 +54,37 @@
       			<p><strong>Description: </strong><span id="info-desc">Describe</span></p>
       			<p><strong>Price $: </strong><span id="info-price">456</span></p>
 
+            <form class="form-row" id="purch" action="purchase.html" method="get">
+              Enter quantity: <input type="text" id="qty" name="qty" value=""> <br>
+              <input type="submit" name="purchase" value="Check Out">
+            </form>
+            <button type="button" name="button" onclick="addToCart()" >Add to Cart</button>
+            <p id="pitem"></p>
       		</div>
       	</div>
 
-      <!--------->
+
+        </div>
+
+
     </div>
+
+
 <script src="js/item-list.js"></script>
+<script src="js/item-sold.js"></script>
+
+
     <script type="text/javascript">
         myFunction();
+       
+
+
+
       function myFunction(){
         //this capture the parameter passes automatically by the browser
         var parameters = location.search.substring(1).split("&");
         var temp=parameters[0].split("=");
-        var l= unescape(temp[1]);
+         l= unescape(temp[1]);
 
       //This reads the data from the js data file and render it to screen
         document.getElementById('info-pic').src = itemData[l].image;
@@ -57,9 +92,41 @@
         document.getElementById('info-type').textContent = itemData[l].type;
         document.getElementById('info-desc').textContent = itemData[l].describe;
         document.getElementById('info-price').textContent = itemData[l].price;
+      }
+
+      function addToCart(){
+        let purchItem="";
+        var parameters = location.search.substring(1).split("&");
+        var temp=parameters[0].split("=");
+         let l= unescape(temp[1]);
+        document.getElementById("pitem").innerHTML=l;
+        let quantity = document.getElementById("purch").elements["qty"].value;
+        let itemprice = itemData[l].price;
+
+        let img = itemData[l].image;
+        let name = itemData[l].name;
+        let type = itemData[l].type;
+        itemData[l].quantity=quantity;
+        let price = itemData[l].price;
+
+      
+        
+
+
+        purList.push(itemData[l]);
+		//purList[l].quantity=quantity;
+
+			for(let i = 0; i<purList.length; i++){
+				console.log(purList[i].quantity);
+				
+			}
+
+          
+
 
 
       }
+
 
     </script>
   </body>
