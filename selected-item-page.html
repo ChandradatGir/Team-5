@@ -3,33 +3,81 @@
   <head>
     <meta charset="utf-8">
     <title>Selected Item Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/keywords-list.js"></script>
+    <script src="js/review-list.js"></script>
+    <script src="js/review-methods.js"></script>
+
+
     <style media="screen">
 
     body{
-      background-color: linen ;
-      max-width: 1800px;
-      width: auto;
-    }
+ 				font-family: Georgia, Times, Times New Roman, serif;
 
-      .clearfix div{
-        float:left;
-        clear:none;
+ 				background-color:#b3ffec;
+ 				font-size:90%;
+ 				font-weight:bold;
+       }
+     h1 {
+ 				font-family: Georgia, Times, Times New Roman, serif;
+
+ 				width:650px;
+ 				text-shadow: 2px 2px 5px yellow;
+ 				color: #3a19c1;
+       }
+
+       .clearfix div{
+         float:left;
+         clear:none;
 
 
-      }
+       }
 
-      .info-holder {
+       .info-holder {
 
-        width:30%;
-      }
+         width:30%;
+       }
 
-      .img-holder div{
-        max-width: 400px;
-        margin: 15px;
-        width: auto;
+       .img-holder div{
+         max-width: 400px;
+         margin: 15px;
+         width: auto;
 
-      }
+       }
+       button, .btn {
+       	background: #36a9ea;
+       	background: -moz-linear-gradient(top, #36a9ea 0%, #127fd2 100%);
+       	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36a9ea), color-stop(100%,#127fd2));
+       	background: -webkit-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+       	background: -o-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+       	background: -ms-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+       	background: linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+       	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#36a9ea', endColorstr='#127fd2',GradientType=0 );
+       	border: 1px solid #00599d;
+       	color: #fff;
+       	padding: 8px 20px;
+       	-webkit-border-radius: 3px;
+       	border-radius: 3px;
+       	-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+       	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+       	text-shadow: 0px 1px 1px #156cc4;
+       	filter: dropshadow(color=#156cc4, offx=0, offy=1);
+       	font-size: 10pt; }
 
+       	button:hover {
+       		background: #2f90d5;
+       		background: -moz-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+       		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f90d5), color-stop(100%,#0351b7));
+       		background: -webkit-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+       		background: -o-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+       		background: -ms-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+       		background: linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+       		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#2f90d5', endColorstr='#0351b7',GradientType=0 ); }
+
+       	button:active {
+       		background: #127fd2;
+       		-webkit-box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0);
+       		box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0); }
     </style>
   </head>
   <body>
@@ -54,11 +102,17 @@
 
             <form class="form-row" id="purch" action="purchase.html" method="get" >
               Enter quantity: <input type="text" id="qty" name="qty" value=""> <br>
-              <input type="submit" name="purchase" value="Go to shopping cart">
+             <input class="btn" type="submit" name="purchase" value="Go to shopping cart">
             </form>
-			
+
             <button type="button" name="button" onclick="addToCart()">Add to Cart</button>
             <p id="pitem"></p>
+            <p id="p-rate"></p>
+            <p id="p-review"></p>
+
+			     <a href="item-list.html"><button> Continue shopping</button></a>
+             <a href="keywordreview.html"><button>Check Item Reviews</button></a>
+        <!--  <button type="button" id="btn2" onClick="customersReviews()"> Review</button>-->
       		</div>
       	</div>
 
@@ -67,39 +121,74 @@
 
 
     </div>
+    <!----Start of review display screem--->
+    <main>
+     <div class="form-row">
+       <form class="surveyForm">
+         <fieldset>
+           <legend>E Commerce Survey Form</legend>
+           <div class="form-row">
+             <p>
+               Dear Sir/Madam,<br> <br>
+
+               It is a great pleasure having you taking part in our survey.
+               Your responses are very important us in that they are integral the service we provide. We will be quick.<br><br>
+               Thank You!<br><br>
+
+               Sincerly,<br>
+               John Doe <br>
+               Manager <br>
+               Epic Survey Inc
+             </p>
+           </div>
+           <div class="form-row">
+             <p>How will you describe your experience about our product(s) and/or service(s)?<br>
+
+            <textarea form="user-review" id="text-review" rows="5" cols="33" placeholder="Please enter review here..."></textarea>
+             <button type="button" id="btn2" onClick="customersReviews()">Add Review</button>
+
+         </fieldset>
+       </form>
+
+     </div>
+   </main>
 
 
+    <!------>
 <script src="js/item-list.js"></script>
 <script src="js/item-sold.js"></script>
+<script src="js/review-methods.js"></script>
 
 
     <script type="text/javascript">
 		let l;
-        myFunction(); 
+        myFunction();
       function myFunction(){
+        //set rate and review
+
+
         //this capture the parameter passes automatically by the browser
         var parameters = location.search.substring(1).split("&");
         var temp=parameters[0].split("=");
          l= unescape(temp[1]);
-		
+
       //This reads the data from the js data file and render it to screen
         document.getElementById('info-pic').src = itemData[l].image;
 		    document.getElementById('info-name').textContent = itemData[l].name;
         document.getElementById('info-type').textContent = itemData[l].type;
         document.getElementById('info-desc').textContent = itemData[l].describe;
         document.getElementById('info-price').textContent = itemData[l].price;
-      } 
 
+      }
     </script>
-	
 	<script>
-	
+
 		function addToCart(){
-			
+
         var parameters = location.search.substring(1).split("&");
         var temp=parameters[0].split("=");
          let id= unescape(temp[1]);
-		 
+
 		 let purList;
 		 if(localStorage.getItem('pl')){
 			purList=JSON.parse(localStorage.getItem('pl'));
@@ -107,30 +196,56 @@
 		 else{
 			purList=[];
 		 }
-        let quantity = document.getElementById("purch").elements["qty"].value;
-		if(quantity<=0){
-			alert("Quantity cannot be zero or less!")
-			myFunction();
-			
-		}else{
-			let img = itemData[id].image;
-			let name = itemData[id].name;
-			let type = itemData[id].type;
-			let price = itemData[id].price
-			let desc = itemData[id].describe;
-			let amount = price * quantity;
-			 
-			 let purchase = new item(name, type, desc, price, quantity, img)
-			 
-			purList.push(purchase);
+
+     let quantity = document.getElementById("purch").elements["qty"].value;
+ 		if(quantity<0){
+ 			alert("Quantity cannot be less than zero!")
+ 			myFunction();
+
+ 		}else{
+ 			let img = itemData[id].image;
+ 			let name = itemData[id].name;
+ 			let type = itemData[id].type;
+ 			let price = itemData[id].price
+ 			let desc = itemData[id].describe;
+ 			let amount = price * quantity;
+
+ 			var index;
+ 			var isFound=false;
+ 			for(var i = 0; i<purList.length; i++){
+ 				if(name == purList[i].name){
+ 					index=i;
+ 					isFound=true;
+ 					break;
+ 				}
+
+ 			}
+
+ 			if(isFound && quantity==0){
+
+           purList.splice(index, 1);
+         }
+       else if(isFound && quantity >0) {
+           	purList[index].quantity=quantity;
+             purList[index].amount=quantity * price;
+
+ 			}
+       else if(!isFound && quantity >0){
+ 				let purchase = new item(name, type, desc, price, quantity, img);
+ 				purList.push(purchase);
+ 			}
+
+
 			 localStorage.setItem('pl', JSON.stringify(purList));
 			 let data = JSON.parse(localStorage.getItem('pl'));
-			 
-			 message = name + " <br>"+desc +" <br>Price: $"+ price + " Quantity: " + quantity + " Cost: $"+ amount +"<br>"; 
+
+			 message = name + " <br>"+desc +" <br>Price: $"+ price + " Quantity: " + quantity + " Cost: $"+ amount +"<br>";
 				document.getElementById("pitem").innerHTML=message +"<br>";
-		}
-		
-      }
+		    }
+
+    }
+
+
 	</script>
 	<script>
 	  function item(name, type, desc, price, quantity, image){
@@ -141,9 +256,9 @@
 			this.quantity = quantity;
 			this.image = image;
 			this.amount = this.price * this.quantity;
-	  
+
 	  }
-	
+
 	</script>
   </body>
 </html>

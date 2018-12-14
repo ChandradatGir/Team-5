@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+body{
+				font-family: Georgia, Times, Times New Roman, serif;
+				font-size: 90%;
+				background-color:#b3ffec;
+				padding: 8px;
+				font-weight:bold;
+}
+* {
+
+  box-sizing: border-box;
+
+}
+h1 {
+  font-family: Georgia, Times, Times New Roman, serif;
+  width:650px;
+  text-shadow: 2px 2px 5px yellow;
+  color: #3a19c1;
+
+  }
+.row {
+
+  display: -ms-flexbox; /* IE10 */
+
+  display: flex;
+
+  -ms-flex-wrap: wrap; /* IE10 */
+
+  flex-wrap: wrap;
+
+  margin: 0 -20px;
+
+}
+
+.col-25 {
+
+  -ms-flex: 25%; /* IE10 */
+
+  flex: 25%;
+
+}
+
+.col-50 {
+
+  -ms-flex: 50%; /* IE10 */
+
+  flex: 50%;
+
+}
+
+.col-75 {
+
+  -ms-flex: 75%; /* IE10 */
+
+  flex: 75%;
+
+}
+
+.col-25,
+
+.col-50,
+
+.col-75 {
+
+  padding: 0 16px;
+
+}
+
+.container {
+
+  background-color: #bc2fbf;
+
+  padding: 5px 20px 15px 20px;
+
+  border: 1px solid lightgrey;
+
+  border-radius: 3px;
+
+}
+
+input[type=text] {
+
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 3px;
+
+}
+
+label {
+
+  margin-bottom: 10px;
+
+  display: block;
+
+}
+
+.icon-container {
+
+  margin-bottom: 20px;
+
+  padding: 7px 0;
+
+  font-size: 24px;
+
+}
+
+.btn {
+  background: #36a9ea;
+  background: -moz-linear-gradient(top, #36a9ea 0%, #127fd2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36a9ea), color-stop(100%,#127fd2));
+  background: -webkit-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: -o-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: -ms-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  background: linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#36a9ea', endColorstr='#127fd2',GradientType=0 );
+  border: 1px solid #00599d;
+  color: #fff;
+  padding: 8px 20px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+  text-shadow: 0px 1px 1px #156cc4;
+  filter: dropshadow(color=#156cc4, offx=0, offy=1);
+  font-size: 10pt; }
+
+  button:hover {
+    background: #2f90d5;
+    background: -moz-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f90d5), color-stop(100%,#0351b7));
+    background: -webkit-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+    background: -o-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+    background: -ms-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+    background: linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#2f90d5', endColorstr='#0351b7',GradientType=0 ); }
+
+  button:active {
+    background: #127fd2;
+    -webkit-box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0);
+    box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0); }
+
+
+.btn:hover {
+
+  background-color: #3a19c1;
+
+}
+
+a {
+
+  color: #2196F3;
+
+}
+
+hr {
+
+  border: 1px solid lightgrey;
+
+}
+
+span.price {
+
+  float: right;
+
+  color: grey;
+
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+
+@media (max-width: 800px) {
+
+  .row {
+
+    flex-direction: column-reverse;
+
+  }
+
+  .col-25 {
+
+    margin-bottom: 20px;
+
+  }
+
+}
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Alpha Marketing Group</h1>
+
+<p>Please submit your information</p>
+
+<div class="row">
+
+  <div class="col-75">
+
+    <div class="container">
+
+      <form action="/action_page.php" onsubmit="myFunction()">
+
+        <div class="row">
+
+          <div class="col-50">
+
+            <h3>Billing Address</h3>
+
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+
+            <input type="text" id="fname" name="fullname" required="required" aria-required="true" title="Please enter your Name" pattern="^([a-zA-Z\s])*$" placeholder="Please enter your full name" type="text" spellcheck="false" maxlength="30" />
+
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+
+            <input type="text" id="email" name="email" required="required" aria-required="true" title="Please enter a valid Email Address" pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$" placeholder="john@example.com" type="email" spellcheck="false" maxlength="30"  />
+
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+
+            <input type="text" id="adr" name="address" required="required" aria-required="true" title="Please enter your Address" pattern="^([- \w\d\u00c0-\u024f]+)$" placeholder="123 Fake Street" type="text" spellcheck="false" maxlength="60" />
+
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+
+            <input type="text" id="city" name="city" required="required" aria-required="true" title="Please enter your city" pattern="^([a-zA-Z\s])*$" placeholder="New York" type="text" spellcheck="false" maxlength="30" />
+
+            <div class="row">
+
+              <div class="col-50">
+
+                <label for="state">State</label>
+
+                <input type="text" id="state" name="state" required="required" aria-required="true" title="Please enter your state" pattern="^([a-zA-Z])*$" placeholder="NY" type="text" spellcheck="false" maxlength="2" />
+
+              </div>
+
+              <div class="col-50">
+
+                <label for="zip">Zip</label>
+
+                <input type="text" id="zip" name="zip" required="required" aria-required="true" title="Please enter a valid Zip Code" pattern="^([0-9]{5})$" placeholder="11364" type="text" spellcheck="false" maxlength="10" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-50">
+
+            <h3>Payment</h3>
+
+            <label for="fname">Accepted Cards</label>
+
+            <div class="icon-container">
+
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+
+              <i class="fa fa-cc-amex" style="color:green;"></i>
+
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+
+            </div>
+
+            <label for="cname">Name on Card</label>
+
+            <input type="text" id="cname" name="cardname" required="required" aria-required="true" title="Please enter your name as it appears on your credit card" pattern="^([a-zA-Z\s])*$" placeholder="John More Doe" type="text" spellcheck="false" maxlength="30" />
+
+            <label for="ccnum">Credit card number</label>
+
+            <input type="text" id="ccnum" name="cardnumber" required="required" aria-required="true" title="Please enter a valid credit card number" pattern="^(([0-9]{4})-([0-9]{4})-([0-9]{4})-([0-9]{4}))*$" placeholder="1111-2222-3333-4444" type="text" spellcheck="false" maxlength="40" />
+
+            <label for="expmonth">Exp Month</label>
+
+            <input type="text" id="expmonth" name="expmonth" required="required" aria-required="true" title="Please enter the month of expiration" pattern="^(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)*$" placeholder="December or Dec" type="text" spellcheck="false" maxlength="12" />
+
+            <div class="row">
+
+              <div class="col-50">
+
+                <label for="expyear">Exp Year</label>
+
+                <input type="text" id="expyear" name="expyear" required="required" aria-required="true" title="Please enter a valid year" pattern="^(201[9]|202[0-9])$" placeholder="2019-2029" type="text" spellcheck="false" maxlength="4" />
+
+              </div>
+
+              <div class="col-50">
+
+                <label for="cvv">CVV</label>
+
+                <input type="text" id="cvv" name="cvv" required="required" aria-required="true" title="Please enter the security code" pattern="^([0-9]{3})$" placeholder="246" type="text" spellcheck="false" maxlength="4" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <label>
+
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+
+        </label>
+
+        <input type="submit" value="Continue to checkout" class="btn">
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <div class="col-25">
+
+
+  </div>
+
+</div>
+<script>
+function addEvent(node, type, callback) {
+  if (node.addEventListener) {
+    node.addEventListener(
+      type,
+      function(e) {
+        callback(e, e.target);
+      },
+      false
+    );
+  } else if (node.attachEvent) {
+    node.attachEvent("on" + type, function(e) {
+      callback(e, e.srcElement);
+    });
+  }
+}
+
+//tests whether a field can be validated
+//requirements of each one
+function shouldBeValidated(field) {
+  return (
+    !(field.getAttribute("readonly") || field.readonly) &&
+    !(field.getAttribute("disabled") || field.disabled) &&
+    (field.getAttribute("pattern") || field.getAttribute("required"))
+  );
+}
+
+//field being tested with the validation function
+function instantValidation(field) {
+  //if the field is valid
+  if (shouldBeValidated(field)) {
+
+    var invalid =
+      (field.getAttribute("required") && !field.value) ||
+      (field.getAttribute("pattern") &&
+        field.value &&
+        !new RegExp(field.getAttribute("pattern")).test(field.value));
+
+    if (!invalid && field.getAttribute("aria-invalid")) {
+      field.removeAttribute("aria-invalid");
+    } else if (invalid && !field.getAttribute("aria-invalid")) {
+      field.setAttribute("aria-invalid", "true");
+    }
+  }
+}
+
+var fields = [
+  document.getElementsByTagName("input"),
+  document.getElementsByTagName("textarea")
+];
+for (var a = fields.length, i = 0; i < a; i++) {
+  for (var b = fields[i].length, j = 0; j < b; j++) {
+    addEvent(fields[i][j], "change", function(e, target) {
+      instantValidation(target);
+    });
+  }
+}
+
+</script>
+<script>
+function myFunction() {
+		purList=[];
+ 		 localStorage.setItem('pl', JSON.stringify(purList));
+		 document.location.href="item-list.html";
+    alert("Your order has been submitted. You will receive a confirmation email shortly.");
+}
+</script>
+</body>
+
+</html>

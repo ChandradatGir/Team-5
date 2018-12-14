@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+<title>Keyword Customer Review</title>
+<link rel="stylesheet"  type="text/css"  href="css/styles2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<center>
+<br>
+<h1>Customer Reviews via Keyword Selection</h1>
+<h2> Read Reviews that mention....</h2>
+<hr/>
+<br>
+
+</head>
+<body>
+<ul id="nav">
+ <li> <a href="" data-category="HomeAppliances-1">Home Appliances</a></li>
+ <li> <a href="" data-category="Toys-1">Toys</a></li>
+ <li>  <a href="" data-category="Electronics-1">Electronics</a></li>
+ <li>  <a href="" data-category="Babygear-1">Baby Gear</a></li>
+ <li>  <a href="" data-category="Clothing-1">Clothing</a></li>
+ <li> <a href= ""  data-category="">All</a></li>
+</ul>
+
+
+<div  id="content">
+
+ <div class="HomeAppliances-1 item">  <strong>Good Review for Instant Pot:</strong> This is the best ever. I can't believe the taste in food with this machine. My third day of cooking with it. I Love It. Everyone should own one.</div>
+ <div class="HomeAppliances-1 item"> <strong>Bad Review for Instant Pot:</strong>Too hard to use if your going to use it as a pressure cooker.</div>
+ <div class="HomeAppliances-1 item"><strong>Worst Review for Instant Pot:</strong>Item was defective and had to be returned. It would heat up and then switch to "warming" no matter what setting was used.</div>
+ <div class="Toys-1 item"><strong>Good Review for Lego Harry Potter:</strong>Came with a nice instruction booklet, easy builds per bag, very fun to build. Definitely worth the price. I don't know though if Lego changed its train track design or this set isn't made to fit on the track. However, I only have a few older track pieces.</div>
+ <div class="Toys-1 item"><strong>Bad Review for Lego Harry Potter:</strong>Well a massive Harry Potter LEGO fan here, really disappointed in the overall design & finish of this train.
+
+ PROS: Station is amazing that is about all, I did like the dementor which you can see has been copied from the Pirates of the Carribean, Silent Mary set oh and the stickers were cool too.
+
+ CONS: it's unpractical and several faults which ill explain in more detail.
+ Carriage Connection: they have moved away from the easy magnet connect system that works so well on all their other LEGO train sets making it easy to pull apart and change where you put the rail carriages.
+
+ Wheels: Seriously why... The Middle wheel doesn't even turn when rolling along on surfaces. due to the design, it is NOT COMPATIBLE with any of the LEGO train tracks so its pretty much a train that doesn't need trains.
+
+ 4708 Hogwarts Express still be the best LEGO Harry Potter train they have designed and would recommend anyone buying that over this any day. Even if you have to buy it on eBay second hand.
+
+ Hope you enjoyed my review!
+ Sorry, it wasn't the one I wanted to write but I guess its an honest one.
+ #LEGOwizardingworld</div>
+ <div class="Toys-1 item"><strong>Worst Review for Lego Harry Potter:</strong> None</div>
+ <div class="Electronics-1 item"><strong>Good Review for Samsung 43" LED TV:</strong>This is an awesome quality for the price. At times we feel like we can skip a rock across the lake on the tv, or Fly pass the moon with ET. Even our blu ray movies picture look ten times better. Love this tv.</div>
+ <div class="Electronics-1 item"><strong>Bad Review for Samsung 43" LED TV:</strong>Love the picture, however about 2/3 of the time I turn the TV on it will not recognize the HDMI cable box signal. The box works fine on every other TV I hook up though. Apparently this is a known problem. Two salesmen said they hear this often on the Samsungs. Remote control is very dated as well. Too bad, loved everything else.</div>
+ <div class="Electronics-1 item"><strong>Worst Review for Samsung 43" LED TV:</strong>This TV does not support 5ghz wifi connection. It only supports 2.4ghz. As a result, streaming quality is spotty at best. There are many TVs in this price range that support both wifi connections. I have called in to Samsung multiple times to ask their reps which wifi connection it supports, and I have been given different answers. Frustrating.</div>
+ <div class="Babygear-1 item"><strong>Good Review for Graco Car Seat:</strong>I bought this a few weeks ago. It was easy to install. My almost 9 month old loves it! I wish I purchased it sooner. It great and is super comfortable. Very happy with the purchase!</div>
+ <div class="Babygear-1 item"><strong>Bad Review for Graco Car Seat:</strong>I love that it fits in my car. Very easy to install. Baby can see out the windows in it. Only bad thing I can say about it is when my baby got sleepy she would just cry because it wasnt comfortable to sleep in. Even with it tilted all the way back, her head would fall forward if she fell asleep.</div>
+ <div class="Babygear-1 item"><strong>Worst Review for Graco Car Seat:</strong>None</div>
+ <div class="Clothing-1 item"><strong>Good Review for Women Sweaters:</strong>I love these. So comfortable. I wish I could wear them everywhere☺</div>
+ <div class="Clothing-1 item"><strong>Bad Review for Women Sweaters:</strong>The light steel jacket shrank 2-1/2 inches the first time I washed it; cold water and no dryer. Shrunk in length of jacket and sleeves.</div>
+ <div class="Clothing-1 item"><strong>Worst Review for Women Sweaters:</strong>Negative. Not true to size and quality, Huge, long and wide.</div>
+
+</div>
+
+<script type="text/javascript">
+// review is suppose to appear once clicked on.
+         //  $(document.ready(function()
+		  // {
+
+		         //  $("HA1").click(function(){
+				      // $(".multiple").hide;
+
+
+
+				   //});
+		   //});
+
+        $("#nav>li>a").click(function(event){
+		     event.preventDefault();
+		     var category = $(this).attr("data-category");
+			 $(".item").hide();
+			 $("."+category).show();
+
+		});
+</script>
+</body>
+
+</html>

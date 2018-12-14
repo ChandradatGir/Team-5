@@ -4,89 +4,123 @@
     <meta charset="utf-8">
     <title>Shopping Cart</title>
 	<style>
-	table, th {
-		border: 1px solid black;
-	}
-	
-			body{
-				font-family: Georgia, Times, Times New Roman, serif;
-				font-family: 'Nosifer', cursive;
-				background-color:#b3ffec;
-				font-size:90%;
-				font-weight:bold;
-				
-				
-			}
-			#container{
-				width: 650px;
-				background-color:linen;
-				border: 5px blue solid;
-				border-radius:5px;
-				background-image: linear-gradient(#ca5ee5, linen);
-			}
-			
-			h1 {	
-				font-family: Georgia, Times, Times New Roman, serif;
-				
-				width:650px;
-				text-shadow: 2px 2px 5px yellow;
-				color: #3a19c1;
-				
-				}
-				
-			p {
-				font-family: Georgia, Times, Times New Roman, serif;
-			}
-				
-			li {
-				font-family: Georgia, Times, Times New Roman, serif;
-				color:#2c9e1a;
-				text-shadow: 2px 2px 5px yellow;
-			}
-			li:hover{
-				color:#236b35;
-				text-shadow: 2px 2px 5px yellow;
-			}
-			
-				
-			table{
-				border-collapse:collapse;
-				background-color:#e091d8;
-				border-radius:5px;
-			}
-			
-			td, th{
-				padding:5px 30px 5px 10px;
-				font-family: Georgia, Times, Times New Roman, serif;
-				font-size:90%;
-				border-spacing:0px;
-				border-bottom: 1px black solid;
-				border-right: 1px black solid;
-				margin:0px;
-			}
-			tr:nth-child(even), th{
-				background-color: #5eafe5;
-			}
-			th{
-				background-color:#bc2fbf;
-				color:black;
-				
-			}
-			th:last-child,
-			td:last-child,
-			th:nth-last-child(3),
-			td:nth-last-child(3) {
-				text-align: right;
-			}
-			
-			tr:hover td, tr:hover th{
-				background-color:#1fd3cd;
-				
-			}
-	img{
-		width:50px;
-		height:auto
-	}
+  table, th {
+  		border: 1px solid black;
+  	}
+
+  			body{
+  				font-family: Georgia, Times, Times New Roman, serif;
+  				font-family: 'Nosifer', cursive;
+  				background-color:#b3ffec;
+  				font-size:90%;
+  				font-weight:bold;
+
+
+  			}
+  			#container{
+  				width: 650px;
+  				background-color:linen;
+  				border: 5px blue solid;
+  				border-radius:5px;
+  				background-image: linear-gradient(#ca5ee5, linen);
+  			}
+
+  			h1 {
+  				font-family: Georgia, Times, Times New Roman, serif;
+
+  				width:650px;
+  				text-shadow: 2px 2px 5px yellow;
+  				color: #3a19c1;
+
+  				}
+
+  			p {
+  				font-family: Georgia, Times, Times New Roman, serif;
+  			}
+
+  			li {
+  				font-family: Georgia, Times, Times New Roman, serif;
+  				color:#2c9e1a;
+  				text-shadow: 2px 2px 5px yellow;
+  			}
+  			li:hover{
+  				color:#236b35;
+  				text-shadow: 2px 2px 5px yellow;
+  			}
+
+
+  			table{
+  				border-collapse:collapse;
+  				background-color:#e091d8;
+  				border-radius:5px;
+  			}
+
+  			td, th{
+  				padding:5px 30px 5px 10px;
+  				font-family: Georgia, Times, Times New Roman, serif;
+  				font-size:90%;
+  				border-spacing:0px;
+  				border-bottom: 1px black solid;
+  				border-right: 1px black solid;
+  				margin:0px;
+  			}
+  			tr:nth-child(even), th{
+  				background-color: #5eafe5;
+  			}
+  			th{
+  				background-color:#bc2fbf;
+  				color:black;
+
+  			}
+  			th:last-child,
+  			td:last-child,
+  			th:nth-last-child(3),
+  			td:nth-last-child(3) {
+  				text-align: right;
+  			}
+
+  			tr:hover td, tr:hover th{
+  				background-color:#1fd3cd;
+
+  			}
+  	img{
+  		width:50px;
+  		height:auto
+  	}
+    button, .btn {
+      background: #36a9ea;
+      background: -moz-linear-gradient(top, #36a9ea 0%, #127fd2 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#36a9ea), color-stop(100%,#127fd2));
+      background: -webkit-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+      background: -o-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+      background: -ms-linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+      background: linear-gradient(top, #36a9ea 0%,#127fd2 100%);
+      filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#36a9ea', endColorstr='#127fd2',GradientType=0 );
+      border: 1px solid #00599d;
+      color: #fff;
+      padding: 8px 20px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+      box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1), inset 0px 1px 0px 0px rgba(250, 250, 250, .3);
+      text-shadow: 0px 1px 1px #156cc4;
+      filter: dropshadow(color=#156cc4, offx=0, offy=1);
+      font-size: 10pt; }
+
+      button:hover {
+        background: #2f90d5;
+        background: -moz-linear-gradient(top, #2f90d5 0%, #0351b7 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f90d5), color-stop(100%,#0351b7));
+        background: -webkit-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+        background: -o-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+        background: -ms-linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+        background: linear-gradient(top, #2f90d5 0%,#0351b7 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#2f90d5', endColorstr='#0351b7',GradientType=0 ); }
+
+      button:active {
+        background: #127fd2;
+        -webkit-box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0);
+        box-shadow: inset 0px 2px 1px 0px rgba(0, 47, 117, .5), 0px 1px 1px 0px rgba(0, 0, 0, 0); }
 </style>
   </head>
   <body>
@@ -109,20 +143,21 @@
 					<td></td>
 					<td></td>
 					<td></td>
-				
+
 				</tr>
 			</table>
-		
+
 		</div>
 		<p id="demo"></p>
-		<a href="item-list.html">Continue chopping</a>
+		<a href="item-list.html"><button>Continue shopping</button></a>
 		<button type="button" id="refresh" value="Reload Page" onClick="reload()">Recalculate</button>
-		<button type="button" id="check out" onclick="">Check Out</button>
+		<button type="button" id="check out" onclick="location.href = 'checkout.html';">Check Out</button>
 	</div>
 	<script>
+
 		getShoppingList();
+
 		function getShoppingList(){
-		
 			let data;
 		 if(localStorage.getItem('pl')){
 			data=JSON.parse(localStorage.getItem('pl'));
@@ -130,13 +165,13 @@
 		 else{
 			data=[];
 		 }
-		 
+
 			if(data.length==0){
 				alert("Shopping list is empty!")
 			}
 			else{
 				var table = document.getElementById("listTable");
-				
+
 				let total = 0;
 				let i;
 				for(i=0; i<data.length; i++){
@@ -147,7 +182,7 @@
 					var cell4=row.insertCell(3);
 					var cell5=row.insertCell(4);
 					var cell6=row.insertCell(5);
-					
+
 					cell1.addEventListener("click", function(){
 					document.getElementById("demo").innerHTML = "Hello World" +count ;
 					});
@@ -155,7 +190,7 @@
 					var img = document.createElement('img');
 					img.src = data[i].image;
 					cell2.appendChild(img);
-					
+
 					cell3.innerHTML=data[i].name +" "+ data[i].describe;
 					cell4.innerHTML="$"+data[i].price;
 					cell5.innerHTML=data[i].quantity;
@@ -173,7 +208,7 @@
 					cell6.innerHTML="<b>$"+total+"</b>";
 			}
 		}
-	
+
 	</script>
 	<script>
 		function reload(){
