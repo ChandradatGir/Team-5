@@ -12,23 +12,31 @@
        }
        h1, h3 {
          font-family: Georgia, Times, Times New Roman, serif;
-         width:650px;
+        
          text-shadow: 2px 2px 5px yellow;
          color: #3a19c1;
 
        }
        .container{
-        max-width:90%;
+        max-width:95%;
         width:auto;
         height:auto;
         margin: 0 auto;
-        padding: 20px;
+        padding: 10px;
        }
-       .category div{
-       float:left;
-       clear:none;
-       width:18%;
-       }
+        @media (min-width: 900px){
+		.category{
+		  display:flex;
+		  justify-content: space-between;
+		}
+	  }
+	  .category1{
+		padding: 0px;
+		margin-bottom: 0px;
+		flex-basis: 20%;
+
+	  }
+
        button, .btn {
          background: #36a9ea;
          background: -moz-linear-gradient(top, #36a9ea 0%, #127fd2 100%);
@@ -166,7 +174,7 @@
     </div
   </div>
   <div class="footer">
-     <a href="item-list.html"><button>Continue Shopping</button></a>
+     <a href="purchase.html"><button>Goto Shopping Cart</button></a>
    </div>
 
   </body>
